@@ -33,8 +33,23 @@ class The_Persistant_Widgets extends WP_Widget {
         $donation_url = $instance['donation_url'];
         
         // HTML Area
-        $chat_profile = '<li><a href="' . $chat_url . '" target="_self" class="chat">' . $chat_title . '</a></li>';
+
+        // Origional
+        // $chat_profile = '<li><a href="' . $chat_url . '" target="_self" class="chat">' . $chat_title . '</a></li>';
+
+        // for Chatra
+        $chat_profile = '<li><a onclick="' . $chat_url . '" href="#" class="chat">' . $chat_title . '</a></li>';
+        
         $donation_profile = '<li><a href="' . $donation_url . '" target="_self" class="donation">' . $donation_title .'</a></li>';
+
+        // $chat_profile = '<li><a data-target="#myModal" href="' . $chat_url . '" target="_blank" class="chat" data-toggle="modal">' . $chat_title . '</a></li>';
+
+        
+
+        
+
+      
+
 
         echo $args['before_widget'];
 
@@ -113,14 +128,14 @@ class The_Persistant_Widgets extends WP_Widget {
 
 // register the helper widget
 function register_the_persistant_widgets() {
-    register_widget('the_persistant_widgets');
+    register_widget('wp-helper-widgets');
 }
 
 // enqueue css stylesheet
 function the_persistant_widgets_css() {
-    wp_enqueue_style('social-profile-widget', plugins_url('the-persistant-widgets.css', __FILE__));
+    wp_enqueue_style('wp-helper-widgets', plugins_url('wp-helper-widgets.css', __FILE__));
 }
 
 // 1, 2, 3 ... go!
 add_action('widgets_init', 'register_the_persistant_widgets');
-add_action('wp_enqueue_scripts', 'the_persistant_widgets_css');
+add_action('wp_enqueue_scripts', 'wp-helper-widgets_css');

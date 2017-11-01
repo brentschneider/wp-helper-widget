@@ -9,7 +9,7 @@ Use font awesome if not using EWU awesome - change at .call_to_action a:before
  Position widget
 */
 
-#my_widget__actions {
+#persistant_widget__actions {
   position: fixed;
   top: 30%;
   right: 0;

@@ -13,10 +13,14 @@ class Persistant_Widgets extends WP_Widget {
 
     function __construct() {
         parent::__construct(
+                // Base ID of the widget
                 'persistant_widgets',
-                __('Persistant Widget', 'translation_domain'), // Name
+                // Widget name that appears in UI
+                __('Persistant Widget', 'translation_domain'), 
+                // The widget description
                 array('description' => __('Persistant Widget', 'translation_domain'),)
         );
+        
     }
 
 

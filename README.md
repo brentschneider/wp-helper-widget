@@ -1,20 +1,20 @@
-# Persistant Widget
+# Persistent Widget
 
 
 Contributors:      brentschneiuder
-Tags:              metaboxes, widget, chat, persistant widget
+Tags:              metaboxes, widget, chat, persistent widget
 Requires at least: Wordpress 4+
 Tested up to:      4.8.2
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-# Persistant Widget
+# Persistent Widget
 
-Persistant widget adds a widget area to right hand side of the page.
+Persistent widget adds a widget area to right hand side of the page.
 
 __TL;DR__
 
-- Add Persistant widget
+- Add Persistent widget
 - Add & setup Chatra
 - Add info and donation urls
 > initiate happy dance
@@ -75,7 +75,7 @@ window.ChatraSetup = {
 
 ### C. Under wordpress > Appearance > widgets
  
-Drag the persistant widget to the footer location.
+Drag the persistent widget to the footer location.
 
 In the three following felds:
 

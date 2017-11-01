@@ -8,21 +8,20 @@ Tested up to:      4.8.2
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-== Description ==
+# Persistant Widget
 
 Persistant widget adds a widget area to right hand side of the page.
-
-
-# Persistant Widget
 
 __TL;DR__
 
 - Add Persistant widget
 - Add & setup Chatra
 - Add info and donation urls
-
+> initiate happy dance
 
 ### Chatra instlation and setup
+
+Summery of chatrs insalation steps.
 
 1. log into your Wordpress admin panel and go to Plugins → Add new.
 2. Enter “chatra” into Search plugins field.
@@ -32,6 +31,7 @@ __TL;DR__
 6. Go back to Wordpress console, paste the code and press Save changes.
 
 
+#### Add to Chatra settings page via the wp-admin area
 This is your widget snippet. Copy-paste it into the code of the pages you want to chat on. Right before the </head> tag is the best option.
 To get yours, log into chatra and click on [set up & customize](https://app.chatra.io/settings/general).
 
@@ -54,7 +54,7 @@ To get yours, log into chatra and click on [set up & customize](https://app.chat
 ```
 
 
-### B. Add the Javascript script to page. 
+### B. Add the following Javascript script to your theme. 
 
 Chatra Javascript [referance](https://chatra.io/help/api/#api-reference)
 ```
@@ -73,12 +73,25 @@ window.ChatraSetup = {
 ```
 
 
-### C. Under wordpress widgets, drag the persistant widget to the footer location.
+### C. Under wordpress > Appearance > widgets
+ 
+Drag the persistant widget to the footer location.
 
+In the three following felds:
+
+#### Chat
 Enter a title such as "Chat"
-
-Add the JS trigger in the url field
+Add the JS trigger in the __url field__
 
 `Chatra('show');Chatra('openChat', true)`
 
+#### Info
 
+Enter a title such as "Info"
+Enter any valid URL
+
+
+#### Give
+
+Enter a title such as "Give"
+Enter any valid URL

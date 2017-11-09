@@ -44,10 +44,11 @@ Use EWU awesome
     }
     .call_to_action ul {
       list-style: none;
-      text-align: center;
+      /* text-align: center; */
     }
     .call_to_action ul li {
       display: inline-block;
+      text-align: center;
       margin: 4px;
       position: relative;
       min-width: 65px;

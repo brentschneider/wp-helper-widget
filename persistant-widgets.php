@@ -30,6 +30,8 @@ class Persistant_Widgets extends WP_Widget {
 
     public function widget( $args, $instance ) {
 
+        $widget_id = $instance['widget_id'];
+        
         $chat_title = $instance['chat_title'];
         $chat_url = $instance['chat_url'];
         $info_title = $instance['info_title'];
@@ -39,20 +41,23 @@ class Persistant_Widgets extends WP_Widget {
         
 
         // HTML output section
+        
+        $widget_id ='<div id="'. $widget_id . '" class="call_to_action "><ul>';
 
         $chat_profile = '<li><a onclick="' . $chat_url . '" href="#" class="ea-speech-bubble">' . $chat_title . '</a></li>';
-        $info_profile = '<li><a href="' . $info_url . '" target="_self" class="ea-info" aria-hidden="true">' . $info_title .'</a></li>';
         $donation_profile = '<li><a href="' . $donation_url . '" target="_self" class="ea-gift">' . $donation_title .'</a></li>';
+        $info_profile = '<li><a href="' . $info_url . '" target="_self" class="ea-info" aria-hidden="true">' . $info_title .'</a></li>';
+       
 
         // Builds the widget on the page
 
         echo $args['before_widget'];
-
-            echo '<div id="persistant_widget__actions" class="call_to_action"><ul>';
-
+    
+            echo (!empty($widget_id) ) ? $widget_id : null;
+            
                 echo (!empty($chat_url) ) ? $chat_profile : null;
-                echo (!empty($info_url) ) ? $info_profile : null;
                 echo (!empty($donation_url) ) ? $donation_profile : null;
+                echo (!empty($info_url) ) ? $info_profile : null;
 
             echo '</ul></div>';
 
@@ -68,18 +73,24 @@ class Persistant_Widgets extends WP_Widget {
 
     public function form($instance) {
 
-        // empty($instance['chat_title']) ? $chat_title = 'How can we help?' : null;
+        isset($instance['widget_id']) ? $widget_id = $instance['widget_id'] : null;
 
         isset($instance['chat_title']) ? $chat_title = $instance['chat_title'] : null;
         isset($instance['chat_url']) ? $chat_url = $instance['chat_url'] : null;
 
-        isset($instance['info_title']) ? $info_title = $instance['info_title'] : null;
-        isset($instance['info_url']) ? $info_url = $instance['info_url'] : null;
-
         isset($instance['donation_title']) ? $donation_title = $instance['donation_title'] : null;
         isset($instance['donation_url']) ? $donation_url = $instance['donation_url'] : null;
 
+        isset($instance['info_title']) ? $info_title = $instance['info_title'] : null;
+        isset($instance['info_url']) ? $info_url = $instance['info_url'] : null;
+
         ?>
+
+        <!-- // Specify for Desktop or Mobile -->
+        <p> 
+            <label for="<?php echo $this->get_field_id('widget_id'); ?>"><?php _e('Widget id:'); ?></label><br />
+            <input class="" id="<?php echo $this->get_field_id('widget_id'); ?>" name="<?php echo $this->get_field_name('widget_id'); ?>" type="text" value="<?php echo esc_attr($widget_id); ?>">
+        </p>
 
         <!-- // Chat -->
         <p>
@@ -87,6 +98,14 @@ class Persistant_Widgets extends WP_Widget {
             <input class="" id="<?php echo $this->get_field_id('chat_title'); ?>" name="<?php echo $this->get_field_name('chat_title'); ?>" type="text" value="<?php echo esc_attr($chat_title); ?>"><br />
             <label for="<?php echo $this->get_field_id('chat_url'); ?>"><?php _e('Chat URL:'); ?></label><br />
             <input class="" id="<?php echo $this->get_field_id('chat_url'); ?>" name="<?php echo $this->get_field_name('chat_url'); ?>" type="text" value="<?php echo esc_attr($chat_url); ?>">
+        </p>
+
+        <!-- // Docation -->
+        <p>
+            <label for="<?php echo $this->get_field_id('donation_title'); ?>"><?php _e('Donation Title:'); ?></label><br />
+            <input class="" id="<?php echo $this->get_field_id('donation_title'); ?>" name="<?php echo $this->get_field_name('donation_title'); ?>" type="text" value="<?php echo esc_attr($donation_title); ?>"><br />
+            <label for="<?php echo $this->get_field_id('donation_url'); ?>"><?php _e('Donation URL:'); ?></label><br />
+            <input class="" id="<?php echo $this->get_field_id('donation_url'); ?>" name="<?php echo $this->get_field_name('donation_url'); ?>" type="text" value="<?php echo esc_attr($donation_url); ?>">
         </p>
 
         <!-- // Info -->
@@ -97,13 +116,6 @@ class Persistant_Widgets extends WP_Widget {
             <input class="" id="<?php echo $this->get_field_id('info_url'); ?>" name="<?php echo $this->get_field_name('info_url'); ?>" type="text" value="<?php echo esc_attr($info_url); ?>">
         </p>
 
-        <!-- // Docation -->
-        <p>
-            <label for="<?php echo $this->get_field_id('donation_title'); ?>"><?php _e('Donation Title:'); ?></label><br />
-            <input class="" id="<?php echo $this->get_field_id('donation_title'); ?>" name="<?php echo $this->get_field_name('donation_title'); ?>" type="text" value="<?php echo esc_attr($donation_title); ?>"><br />
-            <label for="<?php echo $this->get_field_id('donation_url'); ?>"><?php _e('Donation URL:'); ?></label><br />
-            <input class="" id="<?php echo $this->get_field_id('donation_url'); ?>" name="<?php echo $this->get_field_name('donation_url'); ?>" type="text" value="<?php echo esc_attr($donation_url); ?>">
-        </p>
 
         <?php
     }
@@ -121,14 +133,17 @@ class Persistant_Widgets extends WP_Widget {
 
         $instance = array();
 
+            $instance['widget_id'] = (!empty($new_instance['widget_id']) ) ? strip_tags($new_instance['widget_id']) : '';
+            $instance['widget_location'] = (!empty($new_instance['widget_location']) ) ? strip_tags($new_instance['widget_location']) : '';
+
             $instance['chat_title'] = (!empty($new_instance['chat_title']) ) ? strip_tags($new_instance['chat_title']) : '';
             $instance['chat_url'] = (!empty($new_instance['chat_url']) ) ? strip_tags($new_instance['chat_url']) : '';
-            
-            $instance['info_title'] = (!empty($new_instance['info_title']) ) ? strip_tags($new_instance['info_title']) : '';
-            $instance['info_url'] = (!empty($new_instance['info_url']) ) ? strip_tags($new_instance['info_url']) : '';
 
             $instance['donation_title'] = (!empty($new_instance['donation_title']) ) ? strip_tags($new_instance['donation_title']) : '';
             $instance['donation_url'] = (!empty($new_instance['donation_url']) ) ? strip_tags($new_instance['donation_url']) : '';
+
+            $instance['info_title'] = (!empty($new_instance['info_title']) ) ? strip_tags($new_instance['info_title']) : '';
+            $instance['info_url'] = (!empty($new_instance['info_url']) ) ? strip_tags($new_instance['info_url']) : '';
 
         return $instance;
     }

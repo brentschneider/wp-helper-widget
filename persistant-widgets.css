@@ -5,99 +5,144 @@ Use font awesome if not using EWU awesome - change at .call_to_action a:before
  */
 
 
-/*
- Position widget
-*/
-
-#persistant_widget__actions {
-  position: fixed;
-  top: 30%;
-  right: 0;
-  z-index: 9999;
-  padding: 0;
-  margin: 0;
-}
-
-/*
- Set list style
-*/
-
-.call_to_action ul {
-  display: inline-block;
-
-  list-style: none;
-}
-
-.call_to_action ul li {
-   /*
-    Check font size
-   */
-   margin: 4px;
-   position: relative;
-   right: -100px;
-   min-width: 140px;
-   border: rgba(51, 51, 51, .8) solid 3px;
-
-   -webkit-transition: all .6s ease-in-out;
-	 -moz-transition: all .6s ease-in-out;
-	 -o-transition: all .6s ease-in-out;
-	 transition: all .6s ease-in-out;
-
-}
-
-.call_to_action ul li:hover {
-  border: rgba(51, 51, 51, 1) solid 3px;
-  position: relative;
-  right: -7px;
-  /*
-   border: rgba(135, 136, 136, 1) solid 3px;
-  */
-}
-
-.call_to_action a {
-  
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 12px 0 12px 14px;
-  text-decoration: none;
-  font-weight: bolder;
-
-  color: rgba(51, 51, 51, .6);
-  background: rgba(240, 240, 240, .2);
-
-  -webkit-transition: all .4s;
-	 -moz-transition: all .4s;
-	 -o-transition: all .4s;
-	 transition: all .4s
-}
-
-.call_to_action a:hover {
-  color: rgba(51, 51, 51, 1);
-  background: rgba(251, 251, 251, .8);
-}
-
-
-/*
- EWU Awesome Font ICONS
+/* 
+Use EWU awesome
 */
 
 .call_to_action a:before {
   font-family: ewuawesome;
-  speak: none;
-  padding-right: 14px;
 }
 
-.call_to_action li a.chat::before {
-  content: "\EA01"; }
-
-.call_to_action li a.donation::before {
-  content: "\EA16"; 
-}
-
-/* hide on minimize */
+/* Chatra hide on minimize */
 #chatra:not(.chatra--expanded) {
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none;
 }
+
+
+/*
+ Position widget for MOBILE
+*/
+@media (max-width: 991px) {
+    
+  #wrapper-footer-full {
+    background: #333333 !important;
+  }
+    #persistant_widget__desktop{
+      opacity: 0;
+      -webkit-transition: visibility 0s, opacity 0.3s linear;
+      -moz-transition: visibility 0s, opacity 0.3s linear;
+      -o-transition: visibility 0s, opacity 0.3s linear;
+      transition: visibility 0s, opacity 0.3s linear;
+      display: none !important;
+    }
+    #persistant_widget__mobile  {
+      z-index: 9999;
+      padding: 0;
+      margin: 0;
+    }
+    .call_to_action ul {
+      list-style: none;
+      text-align: center;
+    }
+    .call_to_action ul li {
+      display: inline-block;
+      margin: 4px;
+      position: relative;
+      min-width: 65px;
+      border: rgba(255, 255, 255, 1) solid 2px;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+    }
+    .call_to_action ul li:hover {
+      border: rgba(255, 255, 255, 1) solid 2px;
+    }
+    .call_to_action a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 6px 0 4px 0;
+      text-decoration: none;
+      
+      color: rgba(255, 255, 255, .6);
+      background: rgba(0, 0, 0, .4);
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s
+    }
+    .call_to_action a:hover {
+      color: rgba(51, 51, 51, 1);
+      
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .call_to_action a:before {
+      
+      padding-left: 12px;
+      display: block;
+      text-align: center;
+    }
+
+}
+
+/*
+ *
+ *  Position widget for desktop
+ *
+ * * */
+
+@media (min-width: 992px) {
+    #persistant_widget__mobile{
+      opacity: 0;
+      -webkit-transition: visibility 0s, opacity 0.3s linear;
+      -moz-transition: visibility 0s, opacity 0.3s linear;
+      -o-transition: visibility 0s, opacity 0.3s linear;
+      transition: visibility 0s, opacity 0.3s linear;
+      display: none !important;
+    }
+    #persistant_widget__desktop  {
+      position: fixed;
+      top: 26%;
+      right: 0;
+      z-index: 9999;
+      padding: 0;
+      margin: 0;
+    }
+    .call_to_action ul {
+      display: inline-block;
+      list-style: none;
+    }
+    .call_to_action ul li {
+      margin: -3px;
+      position: relative;
+      right: -90px;
+      border: rgba(255, 255, 255, 1) solid 3px;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+    }
+    .call_to_action ul li:hover {
+      position: relative;
+      right: -25px;
+    }
+    .call_to_action a {    
+      display: block;
+      min-width: 140px;
+      height: 100%;
+      padding: 14px 0 12px 20px;
+      text-decoration: none;
+      /* font-weight: bold; */
+      color: rgba(255, 255, 255, 1);
+      background: rgba(0, 0, 0, .6);
+    }
+    .call_to_action a:hover {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 1);
+      background: rgba(0, 0, 0, .6);
+    }
+} /* end desktop styles */

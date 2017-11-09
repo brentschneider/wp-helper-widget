@@ -75,9 +75,18 @@ window.ChatraSetup = {
 
 ### C. Under wordpress > Appearance > widgets
  
-Drag the persistent widget to the footer location.
+Drag the persistent widget to a widget location.
 
-In the three following felds:
+Related: https://codex.wordpress.org/Widgetizing_Themes
+
+##### Enter the following felds:
+
+##### Display on Mobile or Desktop
+
+Note: Breakpoint is set at 991px.
+
+View on Mobile: `#persistant_widget__mobile`
+View on Desktop: `#persistant_widget__desktop`
 
 #### Chat
 Enter a title such as "Chat"

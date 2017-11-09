@@ -19,9 +19,49 @@ __TL;DR__
 - Add info and donation urls
 > initiate happy dance
 
-### Chatra instlation and setup
 
-Summery of chatrs insalation steps.
+## Under wordpress > Appearance > widgets
+ 
+Drag the persistent widget to a widget location.
+Related: https://codex.wordpress.org/Widgetizing_Themes
+
+### Enter the following felds:
+
+##### Display on Mobile or Desktop
+
+    _id field_
+    View on Mobile: `persistant_widget__mobile`
+    View on Desktop: `persistant_widget__desktop`
+
+##### Chat
+
+    _Title_
+    Enter a title such as "Chat"
+
+    _URL_
+    Add the JS trigger in the __url field__
+    `Chatra('show');Chatra('openChat', true)`
+
+##### Info
+
+    _Title_
+    Enter a title such as "Info"
+    _URL_
+    Enter any valid URL
+
+
+##### Give
+
+    _Title_
+    Enter a title such as "Give"
+    _URL_
+    Enter any valid URL
+
+---
+
+## Chatra installation and setup
+
+Summery of Chatra's installation steps.
 
 1. log into your Wordpress admin panel and go to Plugins → Add new.
 2. Enter “chatra” into Search plugins field.
@@ -71,36 +111,3 @@ window.ChatraSetup = {
 
 <!-- Chatra widget code -->
 ```
-
-
-### C. Under wordpress > Appearance > widgets
- 
-Drag the persistent widget to a widget location.
-
-Related: https://codex.wordpress.org/Widgetizing_Themes
-
-##### Enter the following felds:
-
-##### Display on Mobile or Desktop
-
-Note: Breakpoint is set at 991px.
-
-View on Mobile: `#persistant_widget__mobile`
-View on Desktop: `#persistant_widget__desktop`
-
-#### Chat
-Enter a title such as "Chat"
-Add the JS trigger in the __url field__
-
-`Chatra('show');Chatra('openChat', true)`
-
-#### Info
-
-Enter a title such as "Info"
-Enter any valid URL
-
-
-#### Give
-
-Enter a title such as "Give"
-Enter any valid URL

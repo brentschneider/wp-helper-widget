@@ -23,7 +23,7 @@ __TL;DR__
 ## Under wordpress > Appearance > widgets
  
 Drag the persistent widget to a widget location.
-Related: https://codex.wordpress.org/Widgetizing_Themes
+Instalation guide: https://codex.wordpress.org/Widgetizing_Themes
 
 ### Enter the following felds:
 
@@ -100,10 +100,11 @@ Chatra Javascript [referance](https://chatra.io/help/api/#api-reference)
 ```
 <script>
 window.ChatraSetup = {
-    chatHeight: 350,
+    chatWidth: 400,
+    chatHeight: 550,
     colors: {
-        buttonText: '#f600a5',
-        buttonBg: '#fff'
+        buttonText: '#a10022',
+        buttonBg: '##333333'
     },
     startHidden: true
 };
@@ -111,3 +112,5 @@ window.ChatraSetup = {
 
 <!-- Chatra widget code -->
 ```
+
+Related: https://chatra.io/help/api/#passing-arbitrary-info

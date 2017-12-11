@@ -20,41 +20,55 @@ Use EWU awesome
   pointer-events: none;
 }
 
+.call_to_action {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  padding-bottom: 4px;
+  padding-top: 0;
+}
 
 /*
- Position widget for MOBILE
-*/
+ *
+ * Position widget for MOBILE
+ *
+ * * */
 @media (max-width: 991px) {
     
   #wrapper-footer-full {
     background: #333333 !important;
   }
     #persistant_widget__desktop{
-      
       display: none !important;
     }
     #persistant_widget__mobile  {
       z-index: 9999;
       padding: 0;
       margin: 0;
+
     }
     .call_to_action a:before {
-      font-size: 1em;
+      font-size: 1.2em;
+      text-align: center;
       position: relative;
       top: 0px;
       left: 0px;
+      padding-left: 12px;
+      display: block;
+
     }
 
     .call_to_action ul {
       list-style: none;
-      /* text-align: center; */
+      padding: 0;
+   
+      text-align: center;
     }
     .call_to_action ul li {
       display: inline-block;
       text-align: center;
-      margin: 4px;
+      margin: 8px;
       position: relative;
-      min-width: 65px;
+      min-width: 55px;
+      
       border: rgba(255, 255, 255, 1) solid 2px;
       -webkit-transition: all .3s ease-in-out;
       -moz-transition: all .3s ease-in-out;
@@ -70,7 +84,7 @@ Use EWU awesome
       height: 100%;
       text-decoration: none;
       font-size: 1.1em;
-      padding: 10px 0 4px 0;
+      padding: 7px 15px 4px 15px;
       color: rgba(255, 255, 255, 8);
       background: rgba(0, 0, 0, .4);
       -webkit-transition: all .3s;
@@ -83,13 +97,6 @@ Use EWU awesome
       background: rgba(0, 0, 0, .6);
       text-decoration: none;
     }
-    .call_to_action a:before {
-      
-      padding-left: 12px;
-      display: block;
-      text-align: center;
-    }
-
 }
 
 
@@ -107,14 +114,14 @@ Use EWU awesome
       padding: 0;
       margin: 0;
       position: fixed;
-      top: 26%;
+      top: 365px;
       right: 0;
-      z-index: 9999;      
+      z-index: 500;      
     }
     .call_to_action a:before {
       font-size: 1.5em;
       position: relative;
-      top: 7px;
+      top: 8px;
       left: 2px;
     }
     .call_to_action ul {
@@ -143,7 +150,7 @@ Use EWU awesome
     .call_to_action a {    
       display: block;
       height: 100%;
-      padding: 8px 0 10px 14px;
+      padding: 6px 0 12px 12px;
       font-size: 1.3em;
       text-decoration: none;
       color: rgba(255, 255, 255, 1);

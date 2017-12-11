@@ -44,7 +44,7 @@ class Persistant_Widgets extends WP_Widget {
         
         $widget_id ='<div id="'. $widget_id . '" class="call_to_action "><ul>';
 
-        $chat_profile = '<li><a onclick="' . $chat_url . '" href="#" class="ea-speech-bubble">' . $chat_title . '</a></li>';
+        $chat_profile = '<li><a onclick="' . $chat_url . '" href="#" class="ea-speech-bubble ">' . $chat_title . '</a></li>';
         $donation_profile = '<li><a href="' . $donation_url . '" target="_self" class="ea-gift">' . $donation_title .'</a></li>';
         $info_profile = '<li><a href="' . $info_url . '" target="_self" class="ea-info" aria-hidden="true">' . $info_title .'</a></li>';
        

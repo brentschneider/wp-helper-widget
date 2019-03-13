@@ -113,4 +113,21 @@ window.ChatraSetup = {
 <!-- Chatra widget code -->
 ```
 
-Related: https://chatra.io/help/api/#passing-arbitrary-info
+
+### How to hide the standard button
+
+Using CSS:
+
+```
+<style>
+#chatra:not(.chatra--expanded) {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+</style>
+```
+
+#### Related info: 
+
+https://chatra.io/help/api/#passing-arbitrary-info

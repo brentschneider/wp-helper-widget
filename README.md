@@ -1,8 +1,8 @@
 # Persistent Widget
 
 
-Contributors:      brentschneiuder
-Tags:              metaboxes, widget, chat, persistent widget
+Contributors:      brentschneider
+Tags:              widget, chatra
 Requires at least: Wordpress 4+
 Tested up to:      4.8.2
 License:           GPLv2 or later
@@ -10,14 +10,14 @@ License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
 # Persistent Widget
 
-Persistent widget adds a widget area to right hand side of the page.
+The persistent widget adds a widget area to right hand side of the page.
 
 __TL;DR__
 
 - Add Persistent widget
 - Add & setup Chatra
 - Add info and donation urls
-> initiate happy dance
+> `npm install happy-dance`
 
 
 ## Under wordpress > Appearance > widgets
